@@ -1,0 +1,3 @@
+include ':lambdaexample'
+include ':app'
+rootProject.name = "CourutinesExample"
