@@ -20,12 +20,16 @@ import kotlinx.coroutines.*
         setContentView(binding.root)
 
         binding.apply {
+            /** launch() and Job */
             btn1.setOnClickListener {
                 val intent = Intent(this@MainActivity, FirstActivity::class.java)
                 startActivity(intent)
             }
-            btn2.setOnClickListener {
 
+            /** async() and Deferred */
+            btn2.setOnClickListener {
+                val intent = Intent(this@MainActivity, SecondActivity::class.java)
+                startActivity(intent)
             }
             btn3.setOnClickListener {
 
