@@ -32,7 +32,8 @@ import kotlinx.coroutines.*
                 startActivity(intent)
             }
             btn3.setOnClickListener {
-
+                val intent = Intent(this@MainActivity, ThirdActivity::class.java)
+                startActivity(intent)
             }
         }
     }
