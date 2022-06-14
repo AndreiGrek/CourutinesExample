@@ -55,6 +55,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="check"
+        app:layout_constraintBottom_toTopOf="@+id/button_load"/>
+
+    <Button
         android:id="@+id/button_load"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

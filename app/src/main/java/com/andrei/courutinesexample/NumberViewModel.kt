@@ -35,6 +35,10 @@ class NumberViewModel : ViewModel() {
         }
     }
 
+    fun clear(){
+
+    }
+
     /** Первая корутина */
     private val deferredCity = viewModelScope.async {
         loadCity()
@@ -51,8 +55,7 @@ class NumberViewModel : ViewModel() {
     }
 
     private suspend fun loadTemperature(): Int {
-        delay(3000)
+        delay(5000)
         return 17
     }
-
 }

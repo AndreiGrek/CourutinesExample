@@ -2,6 +2,7 @@ package com.andrei.courutinesexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.andrei.courutinesexample.databinding.ActivityFirstBinding
@@ -49,6 +50,10 @@ class FirstActivity : AppCompatActivity() {
                 binding.progress.isVisible = false
                 binding.buttonLoad.isEnabled = true
             }
+        }
+
+        binding.buttonCheck.setOnClickListener {
+            Toast.makeText(this, "UI не блокирован", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -65,6 +65,10 @@ class SecondActivity : AppCompatActivity() {
                 binding.buttonLoad.isEnabled = true
             }
         }
+
+        binding.buttonCheck.setOnClickListener {
+            Toast.makeText(this, "UI не блокирован", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private suspend fun loadCity(): String {
