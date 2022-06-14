@@ -1,5 +1,6 @@
 package com.andrei.courutinesexample
 
+import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
@@ -22,7 +23,19 @@ class NumberViewModel : ViewModel() {
     fun calculate() {
         /** Третья корутина */
         viewModelScope.launch {
+
+            /** Первая корутина */
+             val deferredCity = viewModelScope.async {
+                loadCity()
+            }
+
+            /** Вторая корутина */
+             val deferredTemp = viewModelScope.async {
+                loadTemperature()
+            }
+
             _progress.value = true
+
             /** Если мы сперва хотим дождаться завершения обоиз корутин, а потом присвоить их
              *  значение, то я решил здесь испольщвать join(), а потом await().
              *  Не знаю, можно ли так, но работает.
@@ -36,17 +49,8 @@ class NumberViewModel : ViewModel() {
     }
 
     fun clear(){
-
-    }
-
-    /** Первая корутина */
-    private val deferredCity = viewModelScope.async {
-        loadCity()
-    }
-
-    /** Вторая корутина */
-    private val deferredTemp = viewModelScope.async {
-        loadTemperature()
+        _city.value = ""
+        _temp.value = 0
     }
 
     private suspend fun loadCity(): String {
@@ -55,7 +59,8 @@ class NumberViewModel : ViewModel() {
     }
 
     private suspend fun loadTemperature(): Int {
-        delay(5000)
+        Log.d("logq", "Метод запущен")
+        delay(3000)
         return 17
     }
 }

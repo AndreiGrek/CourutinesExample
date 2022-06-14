@@ -31,6 +31,9 @@ class ThirdActivity : AppCompatActivity() {
         binding.buttonCheck.setOnClickListener {
             Toast.makeText(this, "UI не блокирован", Toast.LENGTH_SHORT).show()
         }
+        binding.buttonClear.setOnClickListener {
+            numberViewModel.clear()
+        }
     }
 
     private fun observeViewModel() {
