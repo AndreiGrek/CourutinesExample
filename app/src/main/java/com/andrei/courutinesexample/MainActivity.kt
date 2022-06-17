@@ -36,9 +36,14 @@ import kotlinx.coroutines.*
                 val intent = Intent(this@MainActivity, ThirdActivity::class.java)
                 startActivity(intent)
             }
-            /** Пример с ViewModel */
+            /** Exception Handler */
             btn4.setOnClickListener {
                 val intent = Intent(this@MainActivity, FourthActivity::class.java)
+                startActivity(intent)
+            }
+            /** Cancelling Coroutines */
+            btn5.setOnClickListener {
+                val intent = Intent(this@MainActivity, FifthActivity::class.java)
                 startActivity(intent)
             }
         }
