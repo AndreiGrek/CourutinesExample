@@ -10,6 +10,7 @@ import com.andrei.courutinesexample.databinding.ActivityFirstBinding
 import com.andrei.courutinesexample.databinding.ActivityThirdBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+
 /** На этом экране пример использования async(), но вместе с ViewModel.
  *  В остальном, всё то же самое, что и в предыдущих примерах.
  */

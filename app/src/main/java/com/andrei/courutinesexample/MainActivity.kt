@@ -31,8 +31,14 @@ import kotlinx.coroutines.*
                 val intent = Intent(this@MainActivity, SecondActivity::class.java)
                 startActivity(intent)
             }
+            /** Пример с ViewModel */
             btn3.setOnClickListener {
                 val intent = Intent(this@MainActivity, ThirdActivity::class.java)
+                startActivity(intent)
+            }
+            /** Пример с ViewModel */
+            btn4.setOnClickListener {
+                val intent = Intent(this@MainActivity, FourthActivity::class.java)
                 startActivity(intent)
             }
         }
