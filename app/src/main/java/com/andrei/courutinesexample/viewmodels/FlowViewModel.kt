@@ -1,36 +1,47 @@
-package com.andrei.courutinesexample
+package com.andrei.courutinesexample.viewmodels
 
 import android.util.Log
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class NumberViewModel : ViewModel() {
+/** ViewModel для SixActivity
+ * То же самое, только здесь миграция с LiveData на Flow.
+ */
+class FlowViewModel : ViewModel(){
 
-    private var _city = MutableLiveData<String>()
-    val city: LiveData<String>
-        get() = _city
+    /** По сути, разница небольшая.
+     * У MutableStateFlow нет параметризации, но есть значение по умолчанию.
+     * У StateFlow нет геттера, но у значения вызываем метод asStateFlow().
+     * Больше измененией никаких
+     */
+    private var _city = MutableStateFlow("Минск")
+    val city: StateFlow<String> = _city.asStateFlow()
 
-    private var _temp = MutableLiveData<Int>()
-    val temp: LiveData<Int>
-        get() = _temp
+    private var _temp = MutableStateFlow(8)
+    val temp: StateFlow<Int> = _temp.asStateFlow()
 
-    private var _progress = MutableLiveData<Boolean>()
-    val progress: LiveData<Boolean>
-        get() = _progress
+    private var _progress = MutableStateFlow(false)
+    val progress: StateFlow<Boolean> = _progress.asStateFlow()
 
     fun calculate() {
         /** Третья корутина */
         viewModelScope.launch {
 
             /** Первая корутина */
-             val deferredCity = viewModelScope.async {
+            val deferredCity = viewModelScope.async {
                 loadCity()
             }
 
             /** Вторая корутина */
-             val deferredTemp = viewModelScope.async {
+            val deferredTemp = viewModelScope.async {
                 loadTemperature()
             }
 

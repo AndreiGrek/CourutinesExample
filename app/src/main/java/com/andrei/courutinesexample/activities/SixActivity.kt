@@ -1,4 +1,4 @@
-package com.andrei.courutinesexample
+package com.andrei.courutinesexample.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.andrei.courutinesexample.viewmodels.FlowViewModel
 import com.andrei.courutinesexample.databinding.ActivitySixBinding
-import com.andrei.courutinesexample.databinding.ActivityThirdBinding
 import kotlinx.coroutines.flow.collect
 /** То же самое, что и SixActivity, но с миграцией с LiveData на Flow. */
 class SixActivity : AppCompatActivity() {

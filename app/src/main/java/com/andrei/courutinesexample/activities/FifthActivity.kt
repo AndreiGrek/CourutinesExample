@@ -1,8 +1,9 @@
-package com.andrei.courutinesexample
+package com.andrei.courutinesexample.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.andrei.courutinesexample.R
 import kotlinx.coroutines.*
 
 /** Пример отмены корутины.
