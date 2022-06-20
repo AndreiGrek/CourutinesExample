@@ -1,4 +1,4 @@
-package com.andrei.courutinesexample
+package com.andrei.courutinesexample.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.*

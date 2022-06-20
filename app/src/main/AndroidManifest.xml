@@ -10,19 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CourutinesExample">
         <activity
-            android:name=".FifthActivity"
+            android:name=".activities.SixActivity"
             android:exported="false" />
         <activity
-            android:name=".FourthActivity"
+            android:name=".activities.FifthActivity"
             android:exported="false" />
         <activity
-            android:name=".ThirdActivity"
+            android:name=".activities.FourthActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".activities.ThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".FirstActivity"
+            android:name=".activities.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FirstActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

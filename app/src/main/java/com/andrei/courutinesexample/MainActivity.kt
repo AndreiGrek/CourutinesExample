@@ -2,13 +2,9 @@
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import com.andrei.courutinesexample.activities.*
 import com.andrei.courutinesexample.databinding.ActivityMainBinding
-import kotlinx.coroutines.*
 
  class MainActivity : AppCompatActivity() {
 
@@ -44,6 +40,11 @@ import kotlinx.coroutines.*
             /** Cancelling Coroutines */
             btn5.setOnClickListener {
                 val intent = Intent(this@MainActivity, FifthActivity::class.java)
+                startActivity(intent)
+            }
+            /** Cancelling Coroutines */
+            btn6.setOnClickListener {
+                val intent = Intent(this@MainActivity, SixActivity::class.java)
                 startActivity(intent)
             }
         }
