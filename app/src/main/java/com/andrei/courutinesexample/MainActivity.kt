@@ -46,6 +46,11 @@ import kotlinx.coroutines.*
                 val intent = Intent(this@MainActivity, FifthActivity::class.java)
                 startActivity(intent)
             }
+            /** Cancelling Coroutines */
+            btn6.setOnClickListener {
+                val intent = Intent(this@MainActivity, SixActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
