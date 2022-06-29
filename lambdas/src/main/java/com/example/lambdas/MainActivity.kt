@@ -20,14 +20,21 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.btn_2).setOnClickListener {
+            val intent = Intent(this@MainActivity, ThirdActivity::class.java)
+            startActivity(intent)
+        }
+
         Log.d(LOG, simpleFunction(2).toString())
         Log.d(LOG, lambdaFunction.invoke(3).toString())
 
         /** Простой пример номер 1
-        Тип переменной "number" можно не указывать */
+        Тип переменной "number" можно не указывать
+        Если параметр только один, то его можно заменить на it, а можно вообще не писать его */
         Log.d(LOG, "Первый пример: ${highOrderFunction1 { number: Int -> number * 5 }}")
         Log.d(LOG, "Первый пример: ${highOrderFunction1 { number -> number * 5 }}")
-        Log.d(LOG, "Первый пример: ${highOrderFunction1 { number: Int -> number * 22 }}")
+        Log.d(LOG, "Первый пример: ${highOrderFunction1 { it -> it * 5 }}")
+        Log.d(LOG, "Первый пример: ${highOrderFunction1 { it * 5 }}")
 
         /** Простой пример номер 2
         Лямбду можно вынести за фигцрные скобки */
